@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h1 style=" margin:3vh;text-shadow: 4px 4px 7px grey; font-family:Lucida Sans Unicode;">Error </h1>
+
+  {{ error_message }}
+ <a href="{{ url_for('register') }}"> Register again </a>
+
+{% endblock %}

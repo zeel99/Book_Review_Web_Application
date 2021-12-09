@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title%}
+Login Page
+{% endblock %}
+
+{% block body %}
+
+<h1 style=" margin:5vh; text-shadow: 3px 3px 6px grey;text-align: center;">
+    Welcome to Book Review Website</h1>
+    <!-- Default form login -->
+<form action="{{url_for('index')}}" method ="POST">
+    <div class="text-center  p-5" action="#!">
+    <p class="h4 mb-4">Sign in</p>
+    <!-- Username -->
+    <div >
+     <input class="form-control mb-4" type="username" name="user"  placeholder="Username">
+    </div>
+
+    <!-- Password -->
+    <div >
+    <input type="password" name="pass" class="form-control mb-4" placeholder="Password">
+    </div>
+
+    <!-- Sign in button -->
+    <div >
+    <button class="btn btn-info my-4" type="submit">Sign in</button>
+    </div>
+
+    <!-- Register-->
+    <p>Not a member?
+        <a href = "{{ url_for('register') }}">Register</a>
+    </p>
+    </div>
+
+</form>
+
+
+{% endblock%}

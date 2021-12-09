@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Book
+{% endblock %}
+
+{% block body %}
+<div style="position: relative; height: 3vh"></div>
+<h1 style="font-family: Raleway;">Search Results</h1>
+
+    <ul>
+        {% for t in title2 %}
+        <li><a href="{{ url_for('apis', isbn=t[1]) }}" style="color: black;">
+            {{ t[0] }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

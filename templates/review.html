@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block title%}
+Review
+{% endblock %}
+
+{% block body %}
+
+<h2 style=" margin:5vh; text-shadow: 4px 4px 7px grey; font-family:Lucida Sans Unicode;">
+    Book Information: </h2>
+
+{%if b_d%}
+<div class="row">
+    <div class="col">
+        <div class="card" style="margin:2rem; width: 10rem;float:left; margin-top:0;">
+            <img src="http://covers.openlibrary.org/b/isbn/{{ b_d[0] }}-L.jpg" class="img-fluid"
+                 alt="Responsive Book Image">
+        </div>
+        <p style="font-family:Lucida Sans Unicode;"> ISBN: {{ b_d[0] }} <br> Title: {{ b_d[1] }}
+            <br> Author: {{ b_d[2] }} <br> Year: {{ b_d[3] }}
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <form action="{{url_for('reviewsubmit', book_id=b_d[0])}}" method="post">
+            <div class="form-group ">
+              <label style="font-size:1.3rem"> Rate the Book:</label>
+              <select name="rate" class="form-control">
+                  <option selected>Choose</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+              </select>
+            </div>
+
+          <div class="form-group">
+            <label style="font-size:1.3rem" >Review:</label>
+            <input type="text" class="form-control" name="writereview" placeholder="Write review here">
+            </div>
+          <button type="submit" class="btn btn-primary my-4">Submit</button>
+          <br>
+            <h4 style="font-family: Raleway;"><strong>Reviews</strong></h4>
+            <ul>
+                {% for r in reviews %}
+                <li style="list-style-type: square;">{{ r[1] }}</li>
+                {% else %}
+                <li style="list-style-type: square;"> No reviews posted for this book yet. </li>
+                {% endfor %}
+            </ul>
+
+            <h4 style="font-family: Raleway;"><strong>Goodread Ratings</strong></h4>
+            <ul>
+                <li style="list-style-type: square;">Average Ratings: {{ avg}}</li>
+                <li style="list-style-type: square;">Work Ratings Count: {{ work }}</li>
+            </ul>
+        </form>
+    </div>
+</div>
+{%endif%}
+
+{%endblock%}

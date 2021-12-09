@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title%}
+Register
+{% endblock %}
+
+{% block body %}
+  <form action="{{url_for('register')}}" method ="POST">
+<h2 style="text-shadow: 3px 3px 6px grey;text-align: center; margin-top:4vh;"> Register Your Account: </h2>
+        <div class="text-center  p-5" action="#!">
+
+
+            <div >
+            <input type="username" name="user" class="form-control mb-4" placeholder="Username">
+            </div>
+            <!-- Password -->
+            <div >
+            <input type="password" name="pass" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+            </div>
+            <!-- Sign up button -->
+            <div >
+            <button class="btn btn-info my-4" type="submit">Sign up</button>
+            </div>
+        </div>
+    </form>
+<!-- Default form register -->
+{% endblock%}

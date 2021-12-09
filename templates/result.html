@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title%}
+results_for_search
+{% endblock %}
+
+{% block body %}
+
+<form action="{{url_for('result')}}" method="post">
+
+        <h3 style=" margin: 25px; font-family:Lucida Sans Unicode; font-size: 2.1em;" > RESULTS: </h3>
+        {%if res%}
+                <ul>
+                {%for num,title in res%}
+                <li style="list-style-type: square;"> <a href="{{url_for('review',book_id=num)}}" >{{title}}</a></li>
+                {%endfor%}
+                </ul>
+        {%endif%}
+
+</form>
+
+
+{%endblock%}
