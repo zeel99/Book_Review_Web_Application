@@ -1,8 +1,8 @@
 # BookReview Website
 
-• CS50 Project 1 -- Web Programming with Python and JavaScript
+• Web Programming with Python and JavaScript
 
-• Built a review website where users can register and log in to search books, leave review for
+• Application where users can register and log in to search books, leave review for
 individual books and see the reviews made by others.
 
 • Also, uses third party API by Goodreads to pull in ratings from broader audience.
