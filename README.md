@@ -11,5 +11,5 @@ individual books and see the reviews made by others.
 CSS to make it more User-Friendly.
 
 
-![Book_Review_Website](https://user-images.githubusercontent.com/47429851/91456646-85065080-e851-11ea-8843-c61e731eda94.gif)
 
+![Demo](https://user-images.githubusercontent.com/54972727/189980256-34745382-44d0-41db-9785-ba1c0af77794.gif)
